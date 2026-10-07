@@ -4,6 +4,8 @@ def is_letter(chr) -> bool:
     return False
 
 def is_palindrome(text) -> bool:
+
+    text = text.lower()
     left = 0
     right = len(text)-1
 
@@ -22,9 +24,10 @@ def is_palindrome(text) -> bool:
 
         return True
 
-input = "Was it a car or a cat I saw?"
+input_1 = "Was it a car or a cat I saw?"
+input_2 = "Hello, World!"
 
-result = is_palindrome(input.lower())
+result = is_palindrome(input_2)
 
 if result == True:
     print("Output: Palindrome")
