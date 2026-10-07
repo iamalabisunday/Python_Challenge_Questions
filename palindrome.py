@@ -1,7 +1,5 @@
 def is_letter(chr) -> bool:
-    if "a" <= chr <= "z" or "A" <= chr <= "Z":
-        return True
-    return False
+    return "a" <= chr <= "z" or "A" <= chr <= "Z"
 
 def is_palindrome(text) -> bool:
 
@@ -10,10 +8,10 @@ def is_palindrome(text) -> bool:
     right = len(text)-1
 
     while left < right:
-        if is_letter(text[left]) == False:
+        if not is_letter(text[left]):
             left += 1
 
-        if is_letter(text[right]) == False:
+        if not is_letter(text[right]):
             right -= 1
 
         if text[left] != text[right]:
