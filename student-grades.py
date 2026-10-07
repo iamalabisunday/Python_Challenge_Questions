@@ -30,6 +30,9 @@ def process_student(student) -> tuple:
 # Use map at least once to produce a list of (name, average, grade) tuples.
 all_results = list(map(process_student, students))
 
+# Replace the map call with a list comprehension. Which version do you find clearer? Write one sentence explaining why.
+# all_results = [process_student(student) for student in students]
+
 # Use filter at least once to produce a list of students who passed (grade A–C).
 passed_students = list(filter(lambda record: record[2] in ("A", "B", "C"), all_results))
 
