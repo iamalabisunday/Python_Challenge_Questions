@@ -25,9 +25,6 @@ def is_palindrome(text) -> bool:
 input_1 = "Was it a car or a cat I saw?"
 input_2 = "Hello, World!"
 
-result = is_palindrome(input_2)
+result = is_palindrome(input_1)
 
-if result == True:
-    print("Output: Palindrome")
-else:
-    print("Output: Not a palindrome")
+message = print("Output: Palindrome") if result == True else print("Output: Not a palindrome")
