@@ -27,4 +27,4 @@ input_2 = "Hello, World!"
 
 result = is_palindrome(input_1)
 
-message = print("Output: Palindrome") if result == True else print("Output: Not a palindrome")
+print("Output: Palindrome") if result == True else print("Output: Not a palindrome")
