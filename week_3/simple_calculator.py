@@ -12,18 +12,20 @@ def calculator(first_numb: int, operator: str, second_numb: int):
     else:
         return "Output:  Error: Invaild Operator"
 
+list_of_result = []
+sum_total = 0
+    
 while True:
     user_input = input("Input: ").lower()
-    
-    list_of_result = []
-    sum_total = 0
     
     if user_input == "undo":
         if len(list_of_result) < 2:
             print("Output: Nothing to undo")
             continue
         list_of_result.pop()
-        print(list_of_result[-1])
+        print(f"Output: {list_of_result[-1]}")
+        sum_total = sum_total - list_of_result[-1]
+        continue
     
     try:
         operator, number = user_input.split()
@@ -31,9 +33,8 @@ while True:
         result = calculator(sum_total, operator, numb)
         if isinstance(result, int):
             sum_total = result
-            list_of_result.append(result)
+            list_of_result.append(sum_total)
             print(f"Output: {sum_total}")
-            print(f"Output: {list_of_result}")
         else:
             print(result)
     except ValueError:
