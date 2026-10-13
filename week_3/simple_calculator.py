@@ -15,21 +15,26 @@ def calculator(first_numb: int, operator: str, second_numb: int):
 while True:
     user_input = input("Input: ").lower()
     
-    result = []
+    list_of_result = []
+    sum_total = 0
+    
     if user_input == "undo":
-        if len(result) < 2:
+        if len(list_of_result) < 2:
             print("Output: Nothing to undo")
             continue
-        result.pop()
-        print(result[-1])
-        continue
-        
-    operator, number = user_input.split()
-    if len(user_input) > 2:
-        print("Output: Invaild input e.g + 5")
-        continue
-        
-    if not "0" <= number <= "9":
-        print("Output: Invaild Input e.g + 5")
-        continue
+        list_of_result.pop()
+        print(list_of_result[-1])
     
+    try:
+        operator, number = user_input.split()
+        numb = int(number)
+        result = calculator(sum_total, operator, numb)
+        if isinstance(result, int):
+            sum_total = result
+            list_of_result.append(result)
+            print(f"Output: {sum_total}")
+            print(f"Output: {list_of_result}")
+        else:
+            print(result)
+    except ValueError:
+        print("Output: Invaild number input e.g + 5")
