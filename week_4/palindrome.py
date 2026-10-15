@@ -19,8 +19,8 @@ def is_palindrome(text: str) -> bool:
     return "Output: Palindrome"
 
 
-# user_input = is_palindrome("Was it a car or a cat I saw?")
-# user_input = is_palindrome("Hello, World!")
+# user_input = is_palindrome("Was it a car or a cat I saw?"
+# user_input = is_palindrome("Hello, World!"
 # print(user_input)
 
 user_input = input("Input: ").lower().strip()
