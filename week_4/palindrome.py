@@ -1,8 +1,8 @@
-def is_letter(ch) -> bool:
+def is_letter(ch: str) -> bool:
     return "a" <= ch <= "z"
 
 
-def is_palindrome(text) -> bool:
+def is_palindrome(text: str) -> bool:
     left = 0
     right = len(text)-1
 
