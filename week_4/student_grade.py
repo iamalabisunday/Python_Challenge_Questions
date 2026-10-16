@@ -39,4 +39,6 @@ all_students = list(map(each_student, students))
 
 pass_students = list(filter(lambda record: record["grade"] in ["A", "B", "C"], all_students))
 
-print(pass_students)
+
+print("All Students:", all_students)
+print("Pass Students:", pass_students)
