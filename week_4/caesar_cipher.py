@@ -27,9 +27,10 @@ while True:
     if mode == "1":
         for character in words:
             if "a" <= character <= "z":
-                current_index = ord(character) - ord("a")
-                next_index = (current_index + shift) % 26
-                next_char = chr(ord("a") + next_index)
+                # current_index = ord(character) - ord("a")
+                # next_index = (current_index + shift) % 26
+                next_char = chr(
+                    (ord(character) - ord("a") + shift) % 26 + ord("a"))
                 result.append(next_char)
             else:
                 result.append(character)
@@ -37,9 +38,10 @@ while True:
     elif mode == "2":
         for character in words:
             if "a" <= character <= "z":
-                current_index = ord(character) - ord("a")
-                next_index = (current_index - shift) % 26
-                next_char = chr(ord("a") + next_index)
+                # current_index = ord(character) - ord("a")
+                # next_index = (current_index - shift) % 26
+                next_char = chr(
+                    (ord(character) - ord("a") - shift) % 26 + ord("a"))
                 result.append(next_char)
             else:
                 result.append(character)
@@ -48,4 +50,6 @@ while True:
         print("Mode error: enter a mode number only e.g. 1 - encrypt or 2 - decrypt")
         continue
 
-    print("".join(result))
+    print("=" * 50)
+    print("Mode:", "".join(result))
+    print("=" * 50)
