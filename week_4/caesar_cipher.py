@@ -27,8 +27,6 @@ while True:
     if mode == "1":
         for character in words:
             if "a" <= character <= "z":
-                # current_index = ord(character) - ord("a")
-                # next_index = (current_index + shift) % 26
                 next_char = chr(
                     (ord(character) - ord("a") + shift) % 26 + ord("a"))
                 result.append(next_char)
@@ -38,8 +36,6 @@ while True:
     elif mode == "2":
         for character in words:
             if "a" <= character <= "z":
-                # current_index = ord(character) - ord("a")
-                # next_index = (current_index - shift) % 26
                 next_char = chr(
                     (ord(character) - ord("a") - shift) % 26 + ord("a"))
                 result.append(next_char)
