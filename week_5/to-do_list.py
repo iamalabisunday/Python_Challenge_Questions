@@ -8,39 +8,40 @@ while True:
     print("4. Quit")
 
     choice = input("Choose an option (1-4): ")
+    
+    match choice:
+        case "1":
+            task = input("Enter the task you want to add: ")
+            tasks.append(task)
+            print("Task added successfully!")
 
-    if choice == "1":
-        task = input("Enter the task you want to add: ")
-        tasks.append(task)
-        print("Task added successfully!")
-
-    elif choice == "2":
-        if len(tasks) == 0:
-            print("Your to-do list is empty.")
-        else:
-            print("\nYour Tasks:")
-            for i in range(len(tasks)):
-                print(f"{i + 1}. {tasks[i]}")
-
-    elif choice == "3":
-        if len(tasks) == 0:
-            print("There are no tasks to remove.")
-        else:
-            print("\nYour Tasks:")
-            for i in range(len(tasks)):
-                print(f"{i + 1}. {tasks[i]}")
-
-            task_number = int(input("Enter the task number to remove: "))
-
-            if task_number >= 1 and task_number <= len(tasks):
-                removed_task = tasks.pop(task_number - 1)
-                print(f"Task '{removed_task}' removed successfully!")
+        case "2":
+            if len(tasks) == 0:
+                print("Your to-do list is empty.")
             else:
-                print("Invalid task number.")
+                print("\nYour Tasks:")
+                for i in range(len(tasks)):
+                    print(f"{i + 1}. {tasks[i]}")
 
-    elif choice == "4":
-        print("Goodbye! Thanks for using the To-Do List.")
-        break
+        case "3":
+            if len(tasks) == 0:
+                print("There are no tasks to remove.")
+            else:
+                print("\nYour Tasks:")
+                for i in range(len(tasks)):
+                    print(f"{i + 1}. {tasks[i]}")
 
-    else:
-        print("Invalid choice. Please select an option from 1 to 4.")
+                task_number = int(input("Enter the task number to remove: "))
+
+                if task_number >= 1 and task_number <= len(tasks):
+                    removed_task = tasks.pop(task_number - 1)
+                    print(f"Task '{removed_task}' removed successfully!")
+                else:
+                    print("Invalid task number.")
+
+        case "4":
+            print("Goodbye! Thanks for using the To-Do List.")
+            break
+
+        case _:
+            print("Invalid choice. Please select an option from 1 to 4.")
