@@ -5,9 +5,9 @@ def smallest_largest(numbers: list)-> int:
     largest = float('-inf')
     
     for number in numbers:
-        if number > largest:
+        if number > largest:  # noqa: PLR1730
             largest = number
-        if number < smallest:
+        if number < smallest:  # noqa: PLR1730
             smallest = number
             
     return f"Smallest: {smallest}\nLargest: {largest}"
@@ -41,3 +41,5 @@ print(f"Numbers above average: {number_above_avg(numbers)}")
 # Total: 96
 # Average: 13.71
 # Numbers above average: 3
+
+

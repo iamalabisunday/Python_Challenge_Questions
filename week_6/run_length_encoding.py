@@ -6,21 +6,34 @@
 # user_input = "aaabbc"
 # user_input = "abcd"
 # user_input = "aaa"
-user_input = "aabbaa"
+# user_input = "aabbaa"
 
-def run_len(value : str) -> dict:
-    record = {}
-    for value in value.lower():
-        if value in record:
-            record[value] += 1
+
+def run_len(values : str) -> str:
+    if len(values) == 1:
+        return values[0] + "1"
+    elif not len(values):
+        return ""
+
+    record = []
+    count = 1
+
+    for index in range(1, len(values)):
+        if values[index] != values[index -1]:
+            record.append(values[index-1])
+            record.append(str(count))
+            count = 1
         else:
-            record[value] = 1
+            count += 1
+    
+    record.append(values[index])
+    record.append(str(count))
             
-    lists = []
-    for value, index in record.items():     
-        lists.append(str(value))
-        lists.append(str(index))
-        
-    return f"Input: {"".join(lists)}"
+    return "".join(record)
+
+# user_input = "adsrghj"
+# user_input = "abcd"
+user_input = "aaa"
+# user_input = "aabbaa"
 
 print(run_len(user_input))
